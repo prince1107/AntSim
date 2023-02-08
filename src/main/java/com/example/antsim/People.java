@@ -1,14 +1,12 @@
 package com.example.antsim;
 
-public class Food extends Thing {
+public class People extends Thing {
     private int x;
     private int y;
 
-    private int food = 0;
-
     String loc;
     private long startTime;
-    public Food(int x,int y){
+    public People(int x, int y){
         this.x = x;
         this.y = y;
         startTime = System.nanoTime();
@@ -21,14 +19,22 @@ public class Food extends Thing {
             int tempx = x;
             int tempy = y;
             if(Math.random()>.5){
-                tempx++;
+                if (tempx<19) {
+                    tempx++;
+                }
             }else {
-                tempx--;
+                if (tempx>0) {
+                    tempx--;
+                }
             }
             if(Math.random()>.5){
-                tempy++;
+                if (tempy<29) {
+                    tempy++;
+                }
             }else {
-                tempy--;
+                if (tempy>0) {
+                    tempy--;
+                }
             }
             if (gameGrid[tempx][tempy]==0){
                 check=true;
@@ -36,15 +42,16 @@ public class Food extends Thing {
                 gameGrid[x][y]=0;
                 x=tempx;
                 y=tempy;
-            } else if (gameGrid[tempx][tempy]==0){
-                check=true;
-                gameGrid[tempx][tempy]=1;
-                gameGrid[x][y]=0;
-                x=tempx;
-                y=tempy;
-                food++;
-                System.out.println(food);
             }
+//            else if (gameGrid[tempx][tempy]==0){
+//                check=true;
+//                gameGrid[tempx][tempy]=1;
+//                gameGrid[x][y]=0;
+//                x=tempx;
+//                y=tempy;
+//                food++;
+//                System.out.println(food);
+//            }
         }
 
 //          System.out.println("x: " + x);
