@@ -1,4 +1,4 @@
-package com.example.antsim;
+package com.example.spaceporttycoon;
 
 public class Building {
     private int row;

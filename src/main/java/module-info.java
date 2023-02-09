@@ -1,8 +1,8 @@
-module com.example.antsim {
+module com.example.spaceporttycoon {
     requires javafx.controls;
     requires javafx.fxml;
 
 
-    opens com.example.antsim to javafx.fxml;
-    exports com.example.antsim;
+    opens com.example.spaceporttycoon to javafx.fxml;
+    exports com.example.spaceporttycoon;
 }

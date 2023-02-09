@@ -1,4 +1,4 @@
-package com.example.antsim;
+package com.example.spaceporttycoon;
 
 public class People extends Thing {
     private int x;

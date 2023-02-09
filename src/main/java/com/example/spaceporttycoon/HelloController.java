@@ -1,4 +1,4 @@
-package com.example.antsim;
+package com.example.spaceporttycoon;
 
 import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
