@@ -20,6 +20,12 @@ public class Building {
         this.shopPrice = shopPrice;
     }
 
+    public Building(String name, int creditGeneration, int shopPrice) {
+        this.creditGeneration = creditGeneration;
+        this.name = name;
+        this.shopPrice = shopPrice;
+    }
+
     public int getCreditsGenerated() {
         return creditsGenerated;
     }
@@ -70,5 +76,13 @@ public class Building {
 
     public int getShopPrice() {
         return shopPrice;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
     }
 }

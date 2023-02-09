@@ -32,6 +32,8 @@ public class HelloController {
 
     ArrayList<Building> buildings = new ArrayList<>();
 
+    ArrayList<Building> allBuildings = new ArrayList<>();
+
     ArrayList<People> people = new ArrayList<>();
 
     @FXML
@@ -39,9 +41,28 @@ public class HelloController {
     @FXML
     private GridPane gPane;
 
+    private Building vesperInn, interstellarInn, astroLodge, nebulaNook, starVoyager, skywaySuites, solarSanctuary, moon, mars, europa, titan, alphaCentauri, gliese, kepler, trappist, barnards;
+
 
     @FXML
     private void handleStart(ActionEvent event) {
+
+        vesperInn = new Building("", 20, 5000);
+        interstellarInn = new Building("", 20, 5000);
+        astroLodge = new Building("", 20, 5000);
+        nebulaNook = new Building("", 20, 5000);
+        starVoyager = new Building("", 20, 5000);
+        skywaySuites = new Building("", 20, 5000);
+        solarSanctuary = new Building("", 20, 5000);
+        moon = new Building("", 20, 5000);
+        mars = new Building("", 20, 5000);
+        europa = new Building("", 20, 5000);
+        titan = new Building("", 20, 5000);
+        alphaCentauri = new Building("", 20, 5000);
+        gliese = new Building("", 20, 5000);
+        kepler = new Building("", 20, 5000);
+        trappist = new Building("", 20, 5000);
+        barnards = new Building("", 20, 5000);
 
         for(int i=0; i<btn.length; i++){
             for(int j=0; j<btn[0].length;j++){
@@ -75,7 +96,11 @@ public class HelloController {
 
                 if(selectedBuilding != null){
                     btn[row][column].setStyle("-fx-background-color:#0000ff");
-                    buildings.add(new Building(19,15, 20, System.nanoTime(), "Rocket to Mars", 20));
+                    buildings.add(selectedBuilding);
+                    buildings.get(buildings.size()-1).setRow(row);
+                    buildings.get(buildings.size()-1).setColumn(column);
+                    buildings.get(buildings.size()-1).setStartTime(System.nanoTime());
+                    gameGrid[buildings.get(buildings.size()-1).getRow()][buildings.get(buildings.size()-1).getColumn()]=2;
                 }
             }
 
